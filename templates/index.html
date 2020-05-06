@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Car Price Predictor</title>
+  <link rel="shortcut icon" href="/static/favicon.png">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='js/init.js') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='js/materialize.js') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='js/materialize.min.js') }}">
+
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#"></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Car Price Predictor</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">This is a Machine Learning based Model which uses XG Boost Algorithm to predict right Price for your used Car
+        </h5>
+      </div>
+
+
+    <div class="row">
+    <form class="col s12" action="{{ url_for('predict')}}" method="post">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Car milage (Eg: 12999)" id="first_name" type="text" class="validate" name="milage">
+          <label for="first_name"></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Car model (Eg: Quest, Corolla, Accord )" id="first_name" type="text" class="validate" name="model">
+          <label for="first_name"></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Maker of car (Eg: Nissan, Toyota, Honda)" id="first_name" type="text" class="validate" name="make">
+          <label for="first_name"></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Car Transmission (Eg: Automatic, Manual)" id="first_name" type="text" class="validate" name="transmission">
+          <label for="first_name"></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Fuel type (Eg: Gasolin, Diesel)" id="first_name" type="text" class="validate" name="fuel">
+          <label for="first_name"></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Engine size V4,V6,V8,V12 (Eg: 4,6,8,12)" id="first_name" type="text" class="validate" name="Num_Cyl">
+          <label for="first_name"> </label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Car manufacture year (Eg: 2000, 2012, 2019)" id="first_name" type="text" class="validate" name="year">
+          <label for="first_name"> </label>
+        </div>
+
+        <div class="input-field col s6">
+          <input placeholder="Car body type (Eg: Sedan, Minivan, Van)" id="first_name" type="text" class="validate" name="body_style">
+          <label for="first_name"> </label>
+        </div>
+
+
+
+
+
+
+         
+
+    
+
+        </div>
+      </div>
+      <div class="row center">
+
+      <button class="btn-large waves-effect waves-light" type="submit" name="action">Predict
+    <i class="material-icons right">send</i>
+  </button>
+  </div>
+
+
+    </form>
+  
+   <br>
+   <br>
+    <div class="row center">
+          <h2 class="header center orange-text" >{{ prediction_text }}</h2>
+      </div>  
+  </div>
+
+
+
+      
+ 
+      
+
+
+
+
+
+
+
+
+      
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h7 class="white-text">Created By:</h7>
+          <h5 class="white-text">Harit Shandilya</h5>
+          
+          <p class="grey-text text-lighten-4"></p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+            <li><a class="white-text" href="#!"></a></li>
+            <li><a class="white-text" href="#!"></a></li>
+            <li><a class="white-text" href="#!"></a></li>
+            <li><a class="white-text" href="#!"></a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/harit198">My Git Hub</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/harit-shandilya-b8967915a/">My Linked In</a></li>
+            <li><a class="white-text" href="https://medium.com/@haritshandilya198">My Blogs</a></li>
+            <li><a class="white-text" href="#!"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+       <a class="orange-text text-lighten-3" href="http://materializecss.com"></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
