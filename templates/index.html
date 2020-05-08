@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='js/init.js') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='js/materialize.js') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='js/materialize.min.js') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
@@ -39,54 +45,62 @@
         <h5 class="header col s12 light">This is a Machine Learning service which predicts price for your used Car
         </h5>
       </div>
+    
+    
 
-
-    <div class="row">
+    <div class="form-group">
     <form class="col s12" action="{{ url_for('predict')}}" method="post">
-      <div class="row">
-        <div class="input-field col s6">
+      <div class="form-group">
+        <div class="form-group">
           <input placeholder="Car milage (Eg: 12999)" id="first_name" type="text" class="validate" name="milage">
           <label for="first_name"></label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Car model (Eg: Quest, Corolla, Accord )" id="first_name" type="text" class="validate" name="model">
           <label for="first_name"></label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Maker of car (Eg: Nissan, Toyota, Honda)" id="first_name" type="text" class="validate" name="make">
           <label for="first_name"></label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Car Transmission (Eg: Automatic, Manual)" id="first_name" type="text" class="validate" name="transmission">
           <label for="first_name"></label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Fuel type (Eg: Gasolin, Diesel)" id="first_name" type="text" class="validate" name="fuel">
           <label for="first_name"></label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Engine size V4,V6,V8,V12 (Eg: 4,6,8,12)" id="first_name" type="text" class="validate" name="Num_Cyl">
           <label for="first_name"> </label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Car manufacture year (Eg: 2000, 2012, 2019)" id="first_name" type="text" class="validate" name="year">
           <label for="first_name"> </label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="form-group">
           <input placeholder="Car body type (Eg: Sedan, Minivan, Van)" id="first_name" type="text" class="validate" name="body_style">
           <label for="first_name"> </label>
         </div>
 
-
-
-
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Choose price timeline</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Jan 2020</option>
+            <option>Mar 2020</option>
+            <option>Feb 2020</option>
+            <option>Apr 2020</option>
+            <option>May 2020</option>
+          </select>
+        </div>
 
 
          
