@@ -9,22 +9,13 @@
 
 
 
-1. Identified top US cities with most cars per square inch. 
-
-2. For those cities, A total of 26,000 Records were scraped using Beautifulsoup and Selenium over the course of 48 Hours. 
-
-3. Data was acquired from Carfax.com and UsedCars.com
-
-4. Data was then cleaned and validated using Python Pandas library. EDA was performed on this data. 
-
-5. Multiple Linear Regression models were created and tested using pipelines offered by libraries such as Sklearn and StatsModels.  
-
-6. Shared the insights with the client. 
-
+- link_Scraper_Carfax.py -This script gets all the links to the page of the car site that would be scrapped.
+- WebScrapping_Script.py - This script scrapes all the links from the above script and stores the car data in a file.
+- Data_Cleaning.py - Cleans the car data after scraping.
+- Data_Model_create.py - Creates a machine learning model for the prediction of the car price which will be updated in the web app
 
 #### Tools Used: Sklearn, StatsModels, Scipy, Patsy Selenium, Beautiful Soup, Python, Pandas, Matplotlib and Seaborn.
 
----
-### <a name="section-b2"></a>2.  EDA
+
 
 

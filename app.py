@@ -61,6 +61,7 @@ def predicts():
     Num_Cyl = result['Num_Cyl']
     year = result['year']
     body_style = result['body_style']
+    prediction_timeline = result['prediction_timeline']
     
     curacel = 'curacel'
     password = 'password'
