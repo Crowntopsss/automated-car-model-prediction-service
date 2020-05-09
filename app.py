@@ -5,7 +5,7 @@ import pickle
 import pandas as pd
 import os
 from sklearn.externals import joblib
-
+import json
 app = Flask(__name__)
 
 
@@ -49,6 +49,32 @@ def predict():
     
     return render_template('result.html', prediction_text="Your used car's price should be ₦{:.2f} ".format(float(pred)*250))
 
+@app.route('/api',methods=['POST'])
+def predicts():
+    result = request.form
+    #print(result)
+    milage = result['milage']
+    model = result['model']
+    make = result['make']
+    transmission = result['transmission']
+    fuel = result['fuel']
+    Num_Cyl = result['Num_Cyl']
+    year = result['year']
+    body_style = result['body_style']
+    
+    curacel = 'curacel'
+    password = 'password'
+    user_input = {'milage': milage, 'model':model , 'make':make, 'transmission': transmission,'fuel':fuel, 'Num_Cyl':Num_Cyl, 'year':year, 'body_style':body_style}
+    print(user_input)    
+
+    if (result['username'] == curacel or result['password'] == password):
+        pred1=Convert(user_input)
+        pred = ({'price':"Your used car's price should be {:.2f} Naira".format((pred1)*250)})
+        
+    else: 
+        pred = "Pls enter the correct password"
+
+    return json.dumps(pred)
 
 if __name__ == "__main__":
     app.run(debug=True)
